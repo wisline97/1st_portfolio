@@ -62,14 +62,8 @@ module.exports = function(app) {
             var loginState = true;
             req.session.loginState = loginState;
             res.redirect("index");
-        } else {
-            res.send(
-                `<script>
-                alert('아이디와 비밀번호가 일치하지 않습니다.');
-                </script>`
-            );
         }
-    })
+    });
 
     app.get("/signup", function(req, res) {
         res.render("signup.ejs");
